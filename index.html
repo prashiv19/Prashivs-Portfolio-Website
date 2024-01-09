@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Prashiv Paresh Pandit</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/8203290531.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+<!-- Script for enquiry sent to email -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("07o4d9YTF8izsEF8t");
+   })();
+</script>
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <!-- <img src="images/logo.png" class="logo"> -->
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                    <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Developer</p>
+                <h1>Hi, I'm <span>Prashiv Pandit</span><br>from Leicester.<br> Welcome to my Website!</h1>
+            </div>
+        </div>
+    </div>
+    <!-- About Me-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/Graduation-profile-picture.png" alt="Profile-Picture">
+                </div>
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Driven computer science graduate with a desire to create innovative software.
+                     Strong foundational coding skills obtained through my degree and personal projects whilst being proficient in C#, Python, and web development.
+                      Capable to effectively self-manage independent projects as well as collaborate as part of a productive team. 
+                      Enthusiastic about applying my software engineering expertise to help drive innovation within a progressive company.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links"onclick="opentab('experiance')">Experiance</p>
+                        <p class="tab-links"onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Problem Solving</span><br> </li>
+                            <li><span>Critical Thinking</span><br> </li>
+                            <li><span>Teamwork</span><br></li>
+                            <li><span>Great Communication</span><br></li>
+                            <li><span>Time Management</span><br></li>
+                            <li><span>Adaptibility</span><br></li>
+                            <li><span>Flexibility</span><br></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="experiance">
+                        <ul>
+                            <li><span>2018-Current</span><br>Sales Assistant at Currys</li>
+                            <!-- <li><span>*</span><br>* </li>
+                            <li><span>*</span><br>* </li> -->
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020-2023</span><br> Bsc Computer Science at University Of Leicester</li>
+                            <li><span>2018-2020</span><br>A-Levels at Wyggeston & Queen Elizabeth College</li>
+                            <li><span>2013-2018</span><br> GCSE's at Judgemeadow Community College</li>
+                        </ul>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Services Section -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Skills</h1>
+        <div class="services-list" >
+            <div>
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <h2>Web Design</h2>
+                <p>Proficient in front-end web development, with expertise in HTML, CSS, and JavaScript. 
+                Skilled in creating responsive and visually appealing web interfaces, employing modern web technologies to craft engaging user experiences. 
+                Experienced in translating design concepts into functional websites, ensuring cross-browser compatibility and accessibility standards.</p>
+                <a href="#contact">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-python"></i>
+                <h2>Python and Web Scraping</h2>
+                <p>Proficient in Python programming language with a focus on data analysis and web development. Leveraging Python's libraries and frameworks, I have successfully executed data analysis projects, and developed dynamic web applications utilizing Python-based frameworks like Django or Flask. Complemented by a Computer Science degree, where I further honed my Python skills through coursework and practical applications.
+                Additionally, I continuously expand my expertise through dedicated self-learning via online tutorials and courses, staying updated with the latest advancements in Python programming, data analytics, and web development trends.</p>
+                <a href="#contact">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-language"></i>
+                <h2>Agile Framework</h2>
+                <p>Proficient in Agile methodologies, adept at iterative development processes that prioritize flexibility and continuous improvement.
+                Skilled in fostering consistent communication with stakeholders to ensure alignment with project goals and swift adaptation to evolving requirements. 
+                Experienced in Agile ceremonies, promoting collaboration within cross-functional teams to deliver high-quality solutions in dynamic environments</p>
+                <a href="#contact">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Projects -->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="project-list">
+            <div class="project">
+                <img src="images/work-1.png" alt="Project Picture">
+                <div class="layer">
+                    <h3>Premier League Refereeing Analysis</h3>
+                    <p>This website shows you a breakdown into Premier League Refereeing and its biases</p>
+                    <a href="https://github.com/prashiv19/PremierLeagueRefereeWebsite"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/work-2.png" alt="Project Picture">
+                <div class="layer">
+                    <h3>Chanda Designs</h3>
+                    <p>This website allows you to book appointments with an amazing tailor and also see their work.</p>
+                    <a href="https://github.com/prashiv19/ChandaDesigns"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/work-3.png" alt="Project Picture">
+                <div class="layer">
+                    <h3>Portfolio Website</h3>
+                    <p>Click here to see the source code for the webiste you are on.</p>
+                    <a href="https://github.com/prashiv19/Prashivs-Portfolio-Website"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+
+<!-- Contact Form -->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i>prashivpandit@icloud.com</p>
+                <p><i class="fa-solid fa-phone"></i>07305343798</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/prashiv-pandit-986587263/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/prashiv19"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="images/PrashivParesh_Pandit_CV.pdf" download class="btn btn2">Download CV here</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" rows="6" placeholder="Leave your enquiry here."></textarea>
+                    <button type = "submit" class="btn btn2" onclick="sendMail();" >Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>All rights reserved. Prashiv Pandit</p>
+    </div>
+</div>
+</body>
+</html>
