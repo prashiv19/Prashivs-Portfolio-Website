@@ -456,3 +456,46 @@ nav .fa-solid{
         font-size: 14px;
     }
 }
+
+
+/*.container { display: inline-block; } */
+
+.animate-text h1{
+font-size: 60px;
+margin-top: 20px;
+letter-spacing: 5px;
+font-family: monospace;
+border-right: 5px solid;
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+animation:
+typing 3s steps(60),
+cursor .4s step-end infinite alternate;
+
+
+
+}
+
+.animate-text p {
+    margin-top: 20%;
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-family: monospace;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+    typing 3s steps(40),
+    cursor .4s step-end infinite alternate;
+    
+    }
+/* cursor blinking */
+@keyframes cursor {
+    50% { border-color: transparent }
+}
+/* typing effect */
+@keyframes typing {
+    from { width: 0 }
+    }

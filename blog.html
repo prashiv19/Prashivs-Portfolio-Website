@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .post {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .post img {
+            max-width: 100%;
+        }
+        .edit-area {
+            display: none;
+        }
+        .admin-only {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Blog</h1>
+    <div id="admin-controls" class="admin-only">
+        <textarea id="postContent" placeholder="Write your post here..." rows="4" cols="50"></textarea><br>
+        <input type="file" id="postImage"><br>
+        <button onclick="addPost()">Post</button>
+    </div>
+    <hr>
+    <div id="posts"></div>
+
+    <script>
+        const isAdmin = prompt("Enter admin password") === "admin123"; // Simple prompt for demo purposes
+
+        if (isAdmin) {
+            document.getElementById('admin-controls').style.display = 'block';
+        }
+
+        function addPost() {
+            const content = document.getElementById('postContent').value;
+            const imageInput = document.getElementById('postImage');
+            const imageFile = imageInput.files[0];
+            const postsDiv = document.getElementById('posts');
+
+            const postDiv = document.createElement('div');
+            postDiv.classList.add('post');
+
+            const contentPara = document.createElement('p');
+            contentPara.textContent = content;
+            postDiv.appendChild(contentPara);
+
+            if (imageFile) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    postDiv.appendChild(img);
+                }
+                reader.readAsDataURL(imageFile);
+            }
+
+            if (isAdmin) {
+                const editArea = document.createElement('div');
+                editArea.classList.add('edit-area');
+                const editContent = document.createElement('textarea');
+                editContent.rows = 4;
+                editContent.cols = 50;
+                editContent.value = content;
+                editArea.appendChild(editContent);
+                const saveButton = document.createElement('button');
+                saveButton.textContent = 'Save';
+                saveButton.onclick = function () {
+                    contentPara.textContent = editContent.value;
+                    postDiv.classList.remove('editing');
+                    editArea.style.display = 'none';
+                };
+                editArea.appendChild(saveButton);
+                postDiv.appendChild(editArea);
+
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.onclick = function () {
+                    editContent.value = contentPara.textContent;
+                    postDiv.classList.add('editing');
+                    editArea.style.display = 'block';
+                };
+                postDiv.appendChild(editButton);
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.onclick = function () {
+                    postsDiv.removeChild(postDiv);
+                };
+                postDiv.appendChild(deleteButton);
+            }
+
+            postsDiv.appendChild(postDiv);
+
+            // Clear the input fields
+            document.getElementById('postContent').value = '';
+            document.getElementById('postImage').value = '';
+        }
+    </script>
+</body>
+</html>
